@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <style>
+                    .button {
+                        border: none;
+                        color: white;
+                        padding: 16px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        -webkit-transition-duration: 0.4s; /* Safari */
+                        transition-duration: 0.4s;
+                        cursor: pointer;
+                    }
+                    
+                    .button1 {
+                        background-color: white;
+                        color: black;
+                        border: 2px solid #1E90FF;
+                    }
+                    
+                    .button1:hover {
+                        background-color: #1E90FF;
+                        color: white;
+                    }
+                    </style>
+    </head>
+    <body>
+        <title>W3.CSS</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <div class="w3-container w3-blue">
+        <h2>Howdy</h2>
+        </div>
+        <p>
+        put your information
+        </p>
+        
+        <form name = "my_form2">
+            Age
+            <input class="w3-input" type="text">
+            <p>Gender
+            <label><input type="checkbox" name = "mycheck"> Male</label>
+            <label><input type="checkbox" name = "mycheck"> Female</label>
+            </p>
+            <p>Activity
+            <label><input type="checkbox" name = "mycheck"> Exercise</label>
+            <label><input type="checkbox" name = "mycheck"> Study</label>
+            <label><input type="checkbox" name = "mycheck"> Party</label>
+            </p>
+            <p>Mood
+            <input type="checkbox" name="smile"><label> <img src="smile.png" width="3%"></label>
+            <input type="checkbox" name="squint"><label> <img src="squint.png" width="3%"></label>
+            <input type="checkbox" name="sad"><label> <img src="sad.png" width="3%"></label>
+            </p>
+            <p>Music genre 
+            <label><input type="checkbox" name = "mycheck"> K-pop</label>
+            <label><input type="checkbox" name = "mycheck"> Dance</label>
+            <label><input type="checkbox" name = "mycheck"> EDM</label>
+            <label><input type="checkbox" name = "mycheck"> Jazz</label>
+            </p>
+        </form>
+
+        <form method="post" action="/page3.html">
+        <button class="button button1">Submit</button></form>
+    </body>
+</html> 
