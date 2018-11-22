@@ -139,29 +139,45 @@ body {
 <script type="text/javascript" src="checklist.js"></script>
 <script>
   
-  console.log(return_list);
+  var getCookie = function(name) {
+  var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return value? value[2] : null;
+};
+list2 = getCookie("list1").split(',');
 </script>
 
 
 <script>
   var z = 0;
   //x : iframe, name, music genre(k-pop:0, dnace:1, edm:2 jazz:3 hip hop:4 pop:5)
-  var x = [
-          ['ieZ_qkyhLwU', '로꼬 (Loco) - Party Band + OPPA', ['4']], 
-          ['m7Bc3pLyij0', 'Marshmello ft. Bastille - Happier', ['2']], 
-          ['ywwU5ka1fBs', '창모 (CHANGMO) - 아름다워 (Beautiful)', ['4']], 
-          ['YfQzz00Oc_M', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', ['4']], 
-          ['D3ZFtSoWtRc', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', ['0']], 
-          ['tvTRZJ-4EyI', 'Kendrick Lamar - HUMBLE', ['4']], 
-          ['xFrGuyw1V8s', 'Abba - Dancing Queen', ['5']],
-          ['mAKsZ26SabQ', 'TWICE(트와이스) "YES or YES"', ['0']],
-          ['UOxkGD8qRB4', 'K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns)', ['0', '1']],
-          ['iwd8N6K-sLk', "EXO 엑소 'Tempo'", ['0']],
-          ['nM0xDI5R50E', " IU(아이유) _ BBIBBI(삐삐)", ['0']],
-          ['EIQNCiIZQRg', "가을 타나 봐 Fall in Fall", ['4']],
-          ['pBuZEGYXA6E', "BTS (방탄소년단) 'IDOL'", ['0']],
-          ['1q_t6RNuH8c',"폴킴 (Paul Kim) - 모든 날, 모든 순간 (Every Day, Every Moment)", ['5']]
+  var xx = [
+          ['ieZ_qkyhLwU', '로꼬 (Loco) - Party Band + OPPA', [4], 0], 
+          ['m7Bc3pLyij0', 'Marshmello ft. Bastille - Happier', [2], 0], 
+          ['ywwU5ka1fBs', '창모 (CHANGMO) - 아름다워 (Beautiful)', [4], 0], 
+          ['YfQzz00Oc_M', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', [4], 0], 
+          ['D3ZFtSoWtRc', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', [0], 0], 
+          ['tvTRZJ-4EyI', 'Kendrick Lamar - HUMBLE', [4], 0], 
+          ['xFrGuyw1V8s', 'Abba - Dancing Queen', [5], 0],
+          ['mAKsZ26SabQ', 'TWICE(트와이스) "YES or YES"', [0], 0],
+          ['UOxkGD8qRB4', 'K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns)', [0, 1], 0],
+          ['iwd8N6K-sLk', "EXO 엑소 'Tempo'", [0], 0],
+          ['nM0xDI5R50E', " IU(아이유) _ BBIBBI(삐삐)", [0], 0],
+          ['EIQNCiIZQRg', "가을 타나 봐 Fall in Fall", [4], 0],
+          ['pBuZEGYXA6E', "BTS (방탄소년단) 'IDOL'", [0], 0],
+          ['1q_t6RNuH8c',"폴킴 (Paul Kim) - 모든 날, 모든 순간 (Every Day, Every Moment)", [5], 0]
         ];
+
+  for (k=0; k<xx.length; k++){
+    for (v=0; v<list2.length; v++){
+      if (v in xx[k][2]){
+        xx[k][3]+=1;
+      }
+    }
+  }
+  x = xx.sort(function(a, b){
+    return b[3] - a[3];
+  })
+  console.log(x);
 
   function next_prev(t){
     z = t;
