@@ -1,94 +1,82 @@
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <script>
 /*JS FOR SCROLLING THE ROW OF THUMBNAILS*/ 
 $(document).ready(function () {
-  $('.vid-item').each(function(index){
-    $(this).on('click', function(){
-      var current_index = index+1;
-      $('.vid-item .thumb').removeClass('active');
-      $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
-    });
+$('.vid-item').each(function(index){
+  $(this).on('click', function(){
+    var current_index = index+1;
+    $('.vid-item .thumb').removeClass('active');
+    $('.vid-item:nth-child('+current_index+') .thumb').addClass('active');
   });
 });
-    
-    
-    </script>
-    <style>
-      body {
-    margin: 0px;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
+});
+  
 
+  </script>
+  <style>
+    body {
+  margin: 0px;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .title {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
-
 .caption {
-    width: 100%;
-    max-width: 854px;
-    margin: 0 auto;
-    padding: 20px 0;
+  width: 100%;
+  max-width: 854px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
-
 .vid-main-wrapper {
-    width: 100%;
-    max-width: 1100px;
-    min-width: 440px;
-    background: #fff;
-    margin: 0 auto;
+  width: 50%;
+  
+  background: #fff;
+  margin: 0 auto;
 }
-
-
 /*  VIDEO PLAYER CONTAINER
 ############################### */
 .vid-container {
-  position: relative;
-  padding-bottom: 0%;
-  padding-top: 0px; 
-  height: 0; 
-width:70%;
+position: relative;
+padding-bottom: 0%;
+padding-top: 0px; 
+height: 40%; 
+width:100%;
 float: top;
 }
-
 .vid-container iframe,
 .vid-container object,
 .vid-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 360px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height : 100%;
+
 }
-
-
 /*  VIDEOS PLAYLIST 
 ############################### */
 .vid-list-container {
-  width: 30%;
-height:360px;
-  overflow: hidden;
+width: 100%;
+height:50%;
+overflow: hidden;
 float:right;
 }
-
 .vid-list-container:hover, .vid-list-container:focus {
 overflow-y: auto;
 }
-
 ol#vid-list {
 margin:0;
 padding:0;
 background: #222;
 }
-
 ol#vid-list li {
 list-style: none;
 }
-
 ol#vid-list li a {
 text-decoration: none;
 background-color: #222;
@@ -96,38 +84,31 @@ height:55px;
 display:block;
 padding:0px;
 }
-
 ol#vid-list li a:hover {
 background-color:#666666
 }
-
 .vid-thumb {
 float:left;
-  margin-right: 8px;
+margin-right: 8px;
 }
-
 .active-vid { 
 background:#3A3A3A;
 }
-
 #vid-list .desc {
-  color: #CACACA;
-  font-size: 13px;
-  margin-top:5px;
+color: #CACACA;
+font-size: 13px;
+margin-top:5px;
 }
-
-
 @media (max-width: 624px) {
-  body {
-      margin: 15px;
-  }
-  .caption {
-      margin-top: 40px;
-  }
-  .vid-list-container {
-      padding-bottom: 20px;
-  }
-
+body {
+    margin: 15px;
+}
+.caption {
+    margin-top: 40px;
+}
+.vid-list-container {
+    padding-bottom: 20px;
+}
 }
 </style>
 
@@ -139,46 +120,80 @@ background:#3A3A3A;
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="w3-container w3-blue">
-    <h2>Howdy</h2>
-    </div>
+  <h2>Howdy</h2>
+  </div>
 
 <div class="vid-main-wrapper clearfix">
 
-        <!-- THE YOUTUBE PLAYER -->
+      
 <div class="vid-container">
 </div>
 
-<!-- THE PLAYLIST -->
+
 <div class="vid-list-container">
-      <ol id="vid-list">
-      </ol>
- </div>
+    <ol id="vid-list">
+    </ol>
+</div>
 </div>
 
-
+<script type="text/javascript" src="checklist.js"></script>
+<script>
+  
+  console.log(return_list);
+</script>
 
 
 <script>
-    var x = ['ieZ_qkyhLwU', 'm7Bc3pLyij0', 'ywwU5ka1fBs', 'YfQzz00Oc_M', 'D3ZFtSoWtRc', 'tvTRZJ-4EyI', 'xFrGuyw1V8s'];
-    var y = ['로꼬 (Loco) - Party Band + OPPA', 'Marshmello ft. Bastille - Happier', '창모 (CHANGMO) - 아름다워 (Beautiful)', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', 'Kendrick Lamar - HUMBLE', 'Abba - Dancing Queen']
+  var z = 0;
+  //x : iframe, name, music genre(k-pop:0, dnace:1, edm:2 jazz:3 hip hop:4 pop:5)
+  var x = [
+          ['ieZ_qkyhLwU', '로꼬 (Loco) - Party Band + OPPA', ['4']], 
+          ['m7Bc3pLyij0', 'Marshmello ft. Bastille - Happier', ['2']], 
+          ['ywwU5ka1fBs', '창모 (CHANGMO) - 아름다워 (Beautiful)', ['4']], 
+          ['YfQzz00Oc_M', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', ['4']], 
+          ['D3ZFtSoWtRc', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', ['0']], 
+          ['tvTRZJ-4EyI', 'Kendrick Lamar - HUMBLE', ['4']], 
+          ['xFrGuyw1V8s', 'Abba - Dancing Queen', ['5']],
+          ['mAKsZ26SabQ', 'TWICE(트와이스) "YES or YES"', ['0']],
+          ['UOxkGD8qRB4', 'K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns)', ['0', '1']],
+          ['iwd8N6K-sLk', "EXO 엑소 'Tempo'", ['0']],
+          ['nM0xDI5R50E', " IU(아이유) _ BBIBBI(삐삐)", ['0']],
+          ['EIQNCiIZQRg', "가을 타나 봐 Fall in Fall", ['4']],
+          ['pBuZEGYXA6E', "BTS (방탄소년단) 'IDOL'", ['0']],
+          ['1q_t6RNuH8c',"폴킴 (Paul Kim) - 모든 날, 모든 순간 (Every Day, Every Moment)", ['5']]
+        ];
 
-    function addlist(){
-      var element = ``;
-      for (t = 0; t < x.length; t++){
+  function next_prev(t){
+    z = t;
+  }
+  function add1(){
+    z+=1;
+    document.getElementById('vid_frame').src=`https://youtube.com/embed/1q_t6RNuH8c?autoplay=1&rel=0&showinfo=0&autohide=1`;
+  }
+  function del1(){
+    z-=1;
+  }
+          
+  function addlist(){
+    var element = ``;
+    for (t = 0; t < x.length; t++){
       element +=  `<li>
-                      <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/`+ x[t] +`?autoplay=1&rel=0&showinfo=0&autohide=1'">
-                      <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/`+ x[t] +`/default.jpg" /></span>
-                      <div class="desc">` + y[t] + `</div>
-                      </a>
-                      </li>`;
-      }
-      $(document).ready(function(){
-        $("ol").append(element);
-        $("div.vid-container").append(`<iframe id="vid_frame" src="https://www.youtube.com/embed/`+x[0] +`?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>`)
-      });
+                    <a href="javascript:void();" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/`+ x[t][0] +`?autoplay=1&rel=0&showinfo=0&autohide=1';next_prev(`+t+`)">
+                    <span class="vid-thumb"><img width=72 src="https://img.youtube.com/vi/`+ x[t][0] +`/default.jpg" /></span>
+                    <div class="desc">` + x[t][1] + `</div>
+                    </a>
+                    </li>`;
     }
-    addlist();
-    
-    
-  </script>
+    $(document).ready(function(){
+      $("ol").append(element);
+      $("div.vid-container").append(`<iframe id="vid_frame" src="https://www.youtube.com/embed/`+x[0][0] +`?rel=0&showinfo=0&autohide=1" frameborder="0" width="560" height="315"></iframe>`)
+    });
+  }
+  addlist();
+  
+  
+</script>
+
+<button onclick=`add1();`>next</button>
+<button onclick=`del1();`>prev</button>
 </body>

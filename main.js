@@ -1,6 +1,8 @@
 var http = require('http');
 var fs = require('fs');
 
+
+
 var express = require('express');
 var app = express();
 app.get('/', function(request, response) {
@@ -24,6 +26,14 @@ app.get('/sad.png', function(request, response) {
 app.get('/squint.png', function(request, response) {
     response.sendFile(__dirname + '/squint.png')
 });
+
+
+app.get('/checklist.js', function(request, response) {
+    response.sendFile(__dirname + '/checklist.js')
+});
+
+
+
 
 
 //삭제

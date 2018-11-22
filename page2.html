@@ -41,12 +41,20 @@
         put your information
         </p>
         
+        <script>
+            function sex1(){
+                my_form2.gender[1].checked = !(my_form2.gender[0].checked)
+            }
+            function sex2(){
+                my_form2.gender[0].checked = !(my_form2.gender[1].checked)
+            }
+        </script>
         <form name = "my_form2">
             Age
             <input class="w3-input" type="text">
             <p>Gender
-            <label><input type="checkbox" name = "mycheck"> Male</label>
-            <label><input type="checkbox" name = "mycheck"> Female</label>
+            <label><input type="checkbox" name = "gender" onclick = "sex1();"> Male</label>
+            <label><input type="checkbox" name = "gender" onclick = "sex2();"> Female</label>
             </p>
             <p>Activity
             <label><input type="checkbox" name = "mycheck"> Exercise</label>
@@ -54,19 +62,32 @@
             <label><input type="checkbox" name = "mycheck"> Party</label>
             </p>
             <p>Mood
-            <input type="checkbox" name="smile"><label> <img src="smile.png" width="3%"></label>
-            <input type="checkbox" name="squint"><label> <img src="squint.png" width="3%"></label>
-            <input type="checkbox" name="sad"><label> <img src="sad.png" width="3%"></label>
+            <input type="checkbox" name="mycheck"><label> <img src="smile.png" width="3%"></label>
+            <input type="checkbox" name="mycheck"><label> <img src="squint.png" width="3%"></label>
+            <input type="checkbox" name="mycheck"><label> <img src="sad.png" width="3%"></label>
             </p>
             <p>Music genre 
             <label><input type="checkbox" name = "mycheck"> K-pop</label>
             <label><input type="checkbox" name = "mycheck"> Dance</label>
             <label><input type="checkbox" name = "mycheck"> EDM</label>
             <label><input type="checkbox" name = "mycheck"> Jazz</label>
+            <label><input type="checkbox" name = "mycheck"> Hip Hop</label>
+            <label><input type="checkbox" name = "mycheck"> Pop</label>
+            </p>
+            <p>Wheather
+            <label><input type="checkbox" name = "mycheck"> Sunny</label>
+            <label><input type="checkbox" name = "mycheck"> Clowdy</label>
+            <label><input type="checkbox" name = "mycheck"> Rainy</label>
             </p>
         </form>
 
+
+        <script type="text/javascript" src="checklist.js">
+        </script>
+
+        <button onclick = "return_checked();">submit</button>
+
         <form method="post" action="/page3.html">
-        <button class="button button1">Submit</button></form>
+        <button class="button button1" onclick = "return_checked();">Submit</button></form>
     </body>
 </html> 
