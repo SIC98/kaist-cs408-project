@@ -60,7 +60,12 @@ height : 100%;
 }
 /*  VIDEOS PLAYLIST 
 ############################### */
+.player {
+  
+}
 .vid-list-container {
+
+padding-top: 50px;
 width: 100%;
 height:50%;
 overflow: hidden;
@@ -68,13 +73,16 @@ float:right;
 }
 .vid-list-container:hover, .vid-list-container:focus {
 overflow-y: auto;
+
 }
 ol#vid-list {
+
 margin:0;
-padding:0;
+padding:0px;
 background: #222;
 }
 ol#vid-list li {
+
 list-style: none;
 }
 ol#vid-list li a {
@@ -110,6 +118,11 @@ body {
     padding-bottom: 20px;
 }
 }
+.song {
+  width : 50px;
+  height : 50px;
+}
+
 </style>
 
 
@@ -144,28 +157,64 @@ body {
   return value? value[2] : null;
 };
 list2 = getCookie("list1").split(',');
+list3 = getCookie("list2").split(',');
+list4 = [];
+if(1 in list3){
+  list4.push(0)
+  list4.push(1)
+  list4.push(2)
+}
+if(2 in list3){
+  list4.push(3)
+  list4.push(4)
+  list4.push(5)
+}
+if(3 in list3){
+  list4.push(6)
+  list4.push(7)
+  list4.push(8)
+  list4.push(9)
+  list4.push(10)
+  list4.push(11)
+}
+if(4 in list3){
+  list4.push(12)
+  list4.push(13)
+  list4.push(14)
+} 
+for(k = 0; k<list2.length; k++){
+  if (list2[k] in list4){}
+  else{
+    list2.splice(k, 1);
+  }
+}
+
+console.log(list2);
+console.log(list4);
 </script>
 
 
 <script>
   var z = 0;
-  //x : iframe, name, music genre(k-pop:0, dnace:1, edm:2 jazz:3 hip hop:4 pop:5)
+  //x : iframe, name, (
+  //k-pop:0, dnace:1, edm:2 jazz:3 hip hop:4 pop:5)
   var xx = [
-          ['ieZ_qkyhLwU', '로꼬 (Loco) - Party Band + OPPA', [4], 0], 
-          ['m7Bc3pLyij0', 'Marshmello ft. Bastille - Happier', [2], 0], 
-          ['ywwU5ka1fBs', '창모 (CHANGMO) - 아름다워 (Beautiful)', [4], 0], 
-          ['YfQzz00Oc_M', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', [4], 0], 
-          ['D3ZFtSoWtRc', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', [0], 0], 
-          ['tvTRZJ-4EyI', 'Kendrick Lamar - HUMBLE', [4], 0], 
-          ['xFrGuyw1V8s', 'Abba - Dancing Queen', [5], 0],
-          ['mAKsZ26SabQ', 'TWICE(트와이스) "YES or YES"', [0], 0],
-          ['UOxkGD8qRB4', 'K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns)', [0, 1], 0],
-          ['iwd8N6K-sLk', "EXO 엑소 'Tempo'", [0], 0],
-          ['nM0xDI5R50E', " IU(아이유) _ BBIBBI(삐삐)", [0], 0],
-          ['EIQNCiIZQRg', "가을 타나 봐 Fall in Fall", [4], 0],
-          ['pBuZEGYXA6E', "BTS (방탄소년단) 'IDOL'", [0], 0],
-          ['1q_t6RNuH8c',"폴킴 (Paul Kim) - 모든 날, 모든 순간 (Every Day, Every Moment)", [5], 0]
+          ['ieZ_qkyhLwU', '로꼬 (Loco) - Party Band + OPPA', [2,10, 12], 0], 
+          ['m7Bc3pLyij0', 'Marshmello ft. Bastille - Happier', [0, 8, 12], 0], 
+          ['ywwU5ka1fBs', '창모 (CHANGMO) - 아름다워 (Beautiful)', [10, 13, 14], 0], 
+          ['YfQzz00Oc_M', 'Loco(로꼬) _ It Takes Time(시간이 들겠지) (Feat. Colde)', [10, 13, 14], 0], 
+          ['D3ZFtSoWtRc', 'MOMMY SON (마미손) - 소년점프 (feat. 배기성)', [0, 2, 6, 12], 0], 
+          ['tvTRZJ-4EyI', 'Kendrick Lamar - HUMBLE', [0, 2, 10, 12], 0], 
+          ['xFrGuyw1V8s', 'Abba - Dancing Queen', [11, 12], 0],
+          ['mAKsZ26SabQ', 'TWICE(트와이스) "YES or YES"', [2, 6, 12], 0],
+          ['UOxkGD8qRB4', 'K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns)', [2, 6, 7, 12], 0],
+          ['iwd8N6K-sLk', "EXO 엑소 'Tempo'", [2, 6, 12], 0],
+          ['nM0xDI5R50E', " IU(아이유) _ BBIBBI(삐삐)", [6, 12, 13], 0],
+          ['EIQNCiIZQRg', "가을 타나 봐 Fall in Fall", [10, 12], 0],
+          ['pBuZEGYXA6E', "BTS (방탄소년단) 'IDOL'", [2, 6, 12], 0],
+          ['1q_t6RNuH8c',"폴킴 (Paul Kim) - 모든 날, 모든 순간 (Every Day, Every Moment)", [11, 13, 14], 0]
         ];
+
 
   for (k=0; k<xx.length; k++){
     for (v=0; v<list2.length; v++){
@@ -183,11 +232,16 @@ list2 = getCookie("list1").split(',');
     z = t;
   }
   function add1(){
-    z+=1;
-    document.getElementById('vid_frame').src=`https://youtube.com/embed/1q_t6RNuH8c?autoplay=1&rel=0&showinfo=0&autohide=1`;
+    if (z != x.length){
+      z+=1;
+    }
+    document.getElementById('vid_frame').src=`https://youtube.com/embed/` + x[z][0] + `?autoplay=1&rel=0&showinfo=0&autohide=1`;
   }
   function del1(){
-    z-=1;
+    if (z != 0){
+      z-=1;
+    }
+    document.getElementById('vid_frame').src=`https://youtube.com/embed/` + x[z][0] + `?autoplay=1&rel=0&showinfo=0&autohide=1`;
   }
           
   function addlist(){
@@ -207,9 +261,10 @@ list2 = getCookie("list1").split(',');
   }
   addlist();
   
-  
-</script>
 
-<button onclick=`add1();`>next</button>
-<button onclick=`del1();`>prev</button>
+</script>
+<div class = "player">
+<button onclick="del1();"><img class = "song" src = "https://cdn0.iconfinder.com/data/icons/arrows-31/100/arrow-11-512.png"></button>
+<button onclick="add1();"><img class ="song" src = "https://cdn0.iconfinder.com/data/icons/arrows-31/100/arrow-10-512.png"></button>
+</div>
 </body>

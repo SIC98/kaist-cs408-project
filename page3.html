@@ -35,6 +35,8 @@
 
 </head>
     <body>
+
+        <script type="text/javascript" src="checklist.js"></script>
         
         <title>W3.CSS</title>
 
@@ -47,23 +49,32 @@
         <p>put your information</p>
 
         <form name = "my_form">
-        <label><p><input type="checkbox" name = "mycheck" value = "All of the below" onclick = "check_all();"> All of the below</p></label>
-        <label><p><input type="checkbox" name = "mycheck" value = "Weather"> Weather</p></label>
-        <label><p><input type="checkbox" name = "mycheck" value = "Activity"> Activity</p></label>
-        <label><p><input type="checkbox" name = "mycheck" value = "Mood"> Mood</p></label>
+        <label><p><input type="checkbox" name = "mycheck2" value = "All of the below" onclick = "check_all();"> All of the below</p></label>
+        <label><p><input type="checkbox" name = "mycheck2" value = "Weather"> Activity</p></label>
+        <label><p><input type="checkbox" name = "mycheck2" value = "Activity"> Mood</p></label>
+        <label><p><input type="checkbox" name = "mycheck2" value = "Mood"> Music genre</p></label>
+        <label><p><input type="checkbox" name = "mycheck2" value = "Mood"> Wheather</p></label>
         </form>
+
+        <button onclick = "return_checked2();">Make Playlist</button>
+
         <form method="post" action="/result.html">
         <button class="button button1">Make Playlist</button></form>
 
         <script>
         function check_all() {
-	        for(i=0; i < my_form.mycheck.length; i++) {
-		        my_form.mycheck[i].checked = my_form.mycheck[0].checked;
+	        for(i=0; i < my_form.mycheck2.length; i++) {
+		        my_form.mycheck2[i].checked = my_form.mycheck2[0].checked;
 	        }
         }
 
         
         </script>
+
+        
+
+
+
         <script type="text/javascript" src="checklist.js">
             console.log(return_list);
         </script>
