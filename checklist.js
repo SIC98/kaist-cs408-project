@@ -1,4 +1,5 @@
 var return_list;
+var return_list2;
 
 function setCookie(cookie_name, value, days) {
     var exdate = new Date();
@@ -23,6 +24,26 @@ function return_checked() {
     }
     console.log(return_list);
     document.cookie = "list1 ="+ return_list+"";
+    console.log(document.cookie);
+    
+}
+
+
+
+function return_checked2() {
+    for(i=0; i < my_form.mycheck2.length; i++) {
+        
+        
+        if (i == 0 && return_list2 != []){
+            return_list2 = [];
+        }
+        if(my_form.mycheck2[i].checked){
+            return_list2.push(i);
+            console.log(return_list2);
+        }
+    }
+    console.log(return_list2);
+    document.cookie = "list2 ="+ return_list2+"";
     console.log(document.cookie);
     
 }

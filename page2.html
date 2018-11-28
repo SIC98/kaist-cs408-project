@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="jquery.xdomainajax.js"></script>
             <style>
                     .button {
                         border: none;
@@ -29,6 +31,7 @@
                     </style>
     </head>
     <body>
+
         <title>W3.CSS</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +44,12 @@
         put your information
         </p>
         
+            
+        
         <script>
+            
+
+
             function sex1(){
                 my_form2.gender[1].checked = !(my_form2.gender[0].checked)
             }
@@ -85,11 +93,14 @@
         <script type="text/javascript" src="checklist.js">
         </script>
 
-        <button onclick = "return_checked();">submit
-            
 
 
-        </button>
+<script src="weather3.js"></script>
+
+<script type="text/javascript">
+    realTimeWeather();
+</script>
+        
 
         <form method="post" action="/page3.html">
         <button class="button button1" onclick = "return_checked();">Submit</button></form>
