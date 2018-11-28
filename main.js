@@ -5,9 +5,17 @@ var fs = require('fs');
 
 var express = require('express');
 var app = express();
+
+
 app.get('/', function(request, response) {
     response.sendFile(__dirname + '/page1.html')
 });
+
+
+app.get('/weather3.js', function(request, response) {
+    response.sendFile(__dirname + '/weather3.js')
+});
+
 app.post('/page2.html', function(request, response) {
     response.sendFile(__dirname + '/page2.html')
 });
